@@ -4,7 +4,7 @@ let computerScore = 0
 
 
 function getComputerChoice() {
-    const options = ["paper", "rock", "scissors"]
+    const options = ["paper", "rock", "scissors"];
     const randomValue = options[Math.floor(Math.random() * options.length)];
     return(randomValue);
 }
@@ -18,19 +18,19 @@ function getHumanChoice() {
         return null;
     }
 
-    input = input.toLocaleLowerCase();
+    input = input.toLowerCase();
 
     if (selected.includes(input)) {
-      return(input)
+      return(input);
     } else {
-    alert("Invalid Choice. Please enter paper, rock, scissors.")
+    alert("Invalid Choice. Please enter paper, rock, scissors.");
     }
 }
 
 function playRound(getHumanChoice, getComputerChoice){
    
     if (getHumanChoice === getComputerChoice) {
-        console.log("It's a tie, try again")
+        console.log("It's a tie, try again");
     } else if ((getHumanChoice === "rock" && getComputerChoice === "scissors") ||
         (getHumanChoice === "scissors" && getComputerChoice === "paper") ||
         (getHumanChoice === "paper" && getComputerChoice === "rock")) {
@@ -40,7 +40,7 @@ function playRound(getHumanChoice, getComputerChoice){
         console.log("You Lose this round, its sad because its a basic computer");
         computerScore++;}
 
-    console.log(`Score - You: ${humanScore}, Computer: ${computerScore}`)
+    console.log(`Score - You: ${humanScore}, Computer: ${computerScore}`);
 }
 
 function playGame() {
@@ -54,7 +54,7 @@ function playGame() {
             continue;
         }
     const computerChoice = getComputerChoice();
-    playRound(humanChoice, computerChoice)
+    playRound(humanChoice, computerChoice);
     }
 
     if (humanScore > computerScore) {
