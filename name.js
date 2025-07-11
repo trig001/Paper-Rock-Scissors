@@ -12,7 +12,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     const selected = ["paper", "rock", "scissors"];
     let input;
-    input = prompt("Please pick Paper/Rock/Scissor");
+    input = prompt("Please pick Paper/Rock/Scissors");
 
     if (input === null) {
         return null;
