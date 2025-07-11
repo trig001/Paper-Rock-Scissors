@@ -12,7 +12,13 @@ function getComputerChoice() {
 function getHumanChoice() {
     const selected = ["paper", "rock", "scissors"];
     let input;
-    input = prompt("Please pick Paper/Rock/Scissor").toLowerCase();
+    input = prompt("Please pick Paper/Rock/Scissor");
+
+    if (input === null) {
+        return null;
+    }
+
+    input = input.toLocaleLowerCase();
 
     if (selected.includes(input)) {
       return(input)
@@ -40,6 +46,10 @@ function playRound(getHumanChoice, getComputerChoice){
 function playGame() {
     while (humanScore < 3 && computerScore < 3){
     const humanChoice = getHumanChoice();
+        
+    if (humanChoice === null) {
+        return;
+    }
         if (!humanChoice) {
             continue;
         }
@@ -52,5 +62,7 @@ function playGame() {
     } else {
         console.log("Sorry you Lost to a computer")
     }
+
+    alert("Would you want to play again?")
 }
 
